@@ -15,8 +15,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.payment = void 0;
 const Payment_1 = __importDefault(require("./models/Payment"));
 const payment = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const payment = new Payment_1.default({ amount: 100 });
-    res.send('ok');
+    const payment = new Payment_1.default({ amount: req.body.amount });
+    res.status(200).json({ id: "asd", amount: 100 });
     return payment.save();
 });
 exports.payment = payment;
