@@ -1,7 +1,7 @@
 import {Application} from "express";
 
 const express = require('express')
-const payment = require('./dts-01-main/routes')
+const payment = require('./src/dts-01-main/routes')
 const cors = require('cors')
 const bodyParser = require('body-parser')
 
@@ -12,6 +12,6 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json())
 app.use("/payment",payment)
 
-app.listen(3000,()=>{
-    console.log('listen 3000')
+app.listen(process.env.PORT,()=>{
+    console.log(process.env.PORT)
 })

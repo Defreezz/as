@@ -4,9 +4,9 @@
   "private": true,
   "description": "test task",
   "author": "Artsiom Yatsevich",
-  "main": "src/index.ts",
+  "main": "index.ts",
   "scripts": {
-    "dev:debug": "nodemon src/index.ts/ localhost 3000 ",
+    "dev:debug": "SET PORT=3002 && nodemon index.ts/",
     "start": "nodemon --inspect dist/index.js"
   },
   "dependencies": {
