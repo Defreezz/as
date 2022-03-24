@@ -4,9 +4,9 @@
   "private": true,
   "description": "test task",
   "author": "Artsiom Yatsevich",
-  "main": "index.ts",
+  "main": "src/index.ts",
   "scripts": {
-    "dev:debug": "SET PORT=3002 && nodemon index.ts/",
+    "dev:debug": "SET PORT=3002 && nodemon src/index.ts/",
     "start": "SET PORT=3002 && nodemon --inspect dist/index.js"
   },
   "dependencies": {

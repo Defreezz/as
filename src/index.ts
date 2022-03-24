@@ -1,9 +1,9 @@
 import {Application} from "express";
 import * as mongoose from "mongoose";
-import {MongoDBUris} from "./src/dts-01-main/config";
+import {MongoDBUris} from "./dts-01-main/config";
 
 const express = require('express')
-const payment = require('./src/dts-01-main/routes')
+const payment = require('./dts-01-main/routes')
 const cors = require('cors')
 const bodyParser = require('body-parser')
 

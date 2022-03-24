@@ -24,9 +24,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose = __importStar(require("mongoose"));
-const config_1 = require("./src/dts-01-main/config");
+const config_1 = require("./dts-01-main/config");
 const express = require('express');
-const payment = require('./src/dts-01-main/routes');
+const payment = require('./dts-01-main/routes');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const app = express();
