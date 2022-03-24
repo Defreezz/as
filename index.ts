@@ -1,9 +1,13 @@
 import {Application} from "express";
+import * as mongoose from "mongoose";
+import {MongoDBUris} from "./src/dts-01-main/config";
 
 const express = require('express')
 const payment = require('./src/dts-01-main/routes')
 const cors = require('cors')
 const bodyParser = require('body-parser')
+
+
 
 const app:Application = express()
 
@@ -12,6 +16,12 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json())
 app.use("/payment",payment)
 
-app.listen(process.env.PORT,()=>{
-    console.log(process.env.PORT)
-})
+mongoose.connect(MongoDBUris)
+    .then(()=>{
+        app.listen(process.env.PORT,()=>{
+
+        })
+    })
+    .catch(e =>{
+        console.log('Mongo connection some error',{...e})
+    })

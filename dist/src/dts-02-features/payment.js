@@ -8,10 +8,16 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.payment = void 0;
+const Payment_1 = __importDefault(require("./models/Payment"));
 const payment = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const payment = new Payment_1.default({ amount: 100 });
     res.send('ok');
+    return payment.save();
 });
 exports.payment = payment;
 module.exports = exports.payment;
