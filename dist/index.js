@@ -11,11 +11,14 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use("/payment", payment);
-mongoose.connect(config_1.MongoDBUris, {})
+mongoose.connect(config_1.MongoDBUris)
     .then(() => {
     app.listen(process.env.PORT, () => {
     });
 })
     .catch((e) => {
     console.log('Mongo connection some error', Object.assign({}, e));
+});
+app.listen(process.env.PORT, () => {
+    console.log(process.env.PORT);
 });
