@@ -17,11 +17,6 @@ app.use(bodyParser.json())
 app.use("/payment",payment)
 
 mongoose.connect(MongoDBUris)
-    .then(()=>{
-        app.listen(process.env.PORT,()=>{
-
-        })
-    })
     .catch((e:any) =>{
         console.log('Mongo connection some error',{...e})
     })
