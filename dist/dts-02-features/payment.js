@@ -14,17 +14,27 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.payment = void 0;
 const Payment_1 = __importDefault(require("./models/Payment"));
+const status400_1 = require("../dts-03-helpers/status400");
+const status500_1 = require("../dts-03-helpers/status500");
 const payment = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    if (!req.body) {
+        (0, status400_1.status400)(res, 'no data card in body', { body: req.body });
+    }
     try {
-        const payment = yield Payment_1.default.create({ amount: req.body.amount });
-        res.status(200).json({ id: payment.id, amount: 100 });
+        const payment = yield Payment_1.default.create({
+            cardNumber: req.body.cardNumber,
+            expDate: req.body.expDate,
+            cvv: req.body.cvv,
+            amount: req.body.amount,
+        });
+        res.status(200).json({
+            RequestId: payment.id,
+            Amount: payment.amount
+        });
         return payment.save();
     }
     catch (e) {
-        res.status(500).json({
-            error: "some error: " + e.message,
-            info: "Back doesn't know what the error is...",
-        });
+        (0, status500_1.status500)(res, e);
     }
 });
 exports.payment = payment;

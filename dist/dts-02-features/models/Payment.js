@@ -26,7 +26,22 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = require("mongoose");
 const mongoose = __importStar(require("mongoose"));
 const PaymentSchema = new mongoose_1.Schema({
-    amount: Number,
+    CardNumber: {
+        type: Number,
+        required: true
+    },
+    expDate: {
+        type: Number,
+        required: true
+    },
+    cvv: {
+        type: Number,
+        required: true
+    },
+    amount: {
+        type: Number,
+        required: true
+    },
 }, {
     timestamps: {
         createdAt: "created",
