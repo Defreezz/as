@@ -26,7 +26,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = require("mongoose");
 const mongoose = __importStar(require("mongoose"));
 const PaymentSchema = new mongoose_1.Schema({
-    CardNumber: {
+    cardNumber: {
         type: Number,
         required: true
     },

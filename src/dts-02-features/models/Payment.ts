@@ -11,7 +11,7 @@ export interface Payment extends Document {
 
 const PaymentSchema: Schema = new Schema(
     {
-        CardNumber: {
+        cardNumber: {
             type: Number,
             required: true
         },
