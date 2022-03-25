@@ -4,7 +4,7 @@ import * as mongoose from "mongoose";
 export interface Payment extends Document {
     _id: mongoose.Types.ObjectId;
     cardNumber: number
-    expDate: number
+    expDate: string
     cvv: number
     amount: number
 }
@@ -16,7 +16,7 @@ const PaymentSchema: Schema = new Schema(
             required: true
         },
         expDate:{
-            type:Number,
+            type:String,
             required:true
         },
         cvv:{

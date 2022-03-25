@@ -31,7 +31,7 @@ const PaymentSchema = new mongoose_1.Schema({
         required: true
     },
     expDate: {
-        type: Number,
+        type: String,
         required: true
     },
     cvv: {
